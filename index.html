@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLOSET SHOPIFY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-fmXQ7r05Lm9euSfSxGZgB3j3Usx85+sGVlB0y3Fw2UqpHtVeuHdy4PM1LkRfdr2xV49poPl09kjGfYGz8Ks5vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <h1>KLOSET SHOPIFY</h1>
+        <nav>
+            <ul>
+                <li><span class="material-symbols-outlined">
+                  home
+                  </span><a href="#">Home</a></li>
+                <li><span class="material-symbols-outlined">
+                  storefront
+                  </span><a href="#">Shop</a></li>
+                <li><span class="material-symbols-outlined">
+                  roundabout_right
+                  </span><a href="#">About</a></li>
+                <li><span class="material-symbols-outlined">
+                  contacts
+                  </span><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="cart">
+        <p><span class="material-symbols-outlined">
+          shopping_cart
+          </span>Cart: 0 items</p>
+    </div>
+    
+   <section class="data2">
+    <div class="container">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+            chevron_left
+          </button>
+          <ul class="image-list">
+            <img class="image-item" src="airmax sports image 10.jpg" alt="img-1" />
+            <img class="image-item" src="ladies pinky sneakers image 1.jpg" alt="img-2" />
+            <img class="image-item" src="varieties shoes image 2.jpg" alt="img-3" />
+            <img class="image-item" src="varieties unisex sports image 9.jpg" alt="img-4" />
+            <img class="image-item" src="variety convers image 14.jpg" alt="img-5" />
+            <img class="image-item" src="white black sample image 15.jpg" alt="img-6" />
+          </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            chevron_right
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+          </div>
+          <style>
+             
+
+
+
+
+
+.slider-wrapper .slide-button {
+position: absolute;
+top: 50%;
+outline: none;
+border: none;
+height: 50px;
+width: 50px;
+z-index: 5;
+color: #fff;
+display: flex;
+cursor: pointer;
+font-size: 2.2rem;
+background: #000;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover {
+background: #404040;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+left: -25px;
+display: none;
+}
+
+.slider-wrapper .slide-button#next-slide {
+right: -25px;
+z-index: -1;
+}
+
+.slider-wrapper .image-list {
+
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+gap: 18px;
+font-size: 0;
+list-style: none;
+margin-bottom: 30px;
+overflow-x: auto;
+scrollbar-width: none;
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar {
+display: none;
+}
+
+.slider-wrapper .image-list .image-item {
+width: 325px;
+height: 400px;
+object-fit: cover;
+}
+
+.container .slider-scrollbar {
+height: 24px;
+width: 100%;
+display: flex;
+align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+background: #ccc;
+width: 100%;
+height: 2px;
+display: flex;
+align-items: center;
+border-radius: 4px;
+position: relative;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+position: absolute;
+background: #000;
+top: 0;
+bottom: 0;
+width: 50%;
+height: 100%;
+cursor: grab;
+border-radius: inherit;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+cursor: grabbing;
+z-index: -1;
+height: 8px;
+top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+top: -10px;
+bottom: -10px;
+}
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 1023px) {
+.slider-wrapper .slide-button {
+  display: none !important;
+}
+
+.slider-wrapper .image-list {
+  gap: 10px;
+  margin-bottom: 15px;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-wrapper .image-list .image-item {
+  width: 280px;
+  height: 380px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+  width: 20%;
+}
+}
+          </style>
+          <script>
+              const initSlider = () => {
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+  const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+  
+  // Handle scrollbar thumb drag
+  scrollbarThumb.addEventListener("mousedown", (e) => {
+      const startX = e.clientX;
+      const thumbPosition = scrollbarThumb.offsetLeft;
+      const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+      
+      // Update thumb position on mouse move
+      const handleMouseMove = (e) => {
+          const deltaX = e.clientX - startX;
+          const newThumbPosition = thumbPosition + deltaX;
+
+          // Ensure the scrollbar thumb stays within bounds
+          const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+          const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+          
+          scrollbarThumb.style.left = `${boundedPosition}px`;
+          imageList.scrollLeft = scrollPosition;
+      }
+
+      // Remove event listeners on mouse up
+      const handleMouseUp = () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+      }
+
+      // Add event listeners for drag interaction
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+  });
+
+  // Slide images according to the slide button clicks
+  slideButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          const direction = button.id === "prev-slide" ? -1 : 1;
+          const scrollAmount = imageList.clientWidth * direction;
+          imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+  });
+
+   // Show or hide slide buttons based on scroll position
+  const handleSlideButtons = () => {
+      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+  }
+
+  // Update scrollbar thumb position based on image scroll
+  const updateScrollThumbPosition = () => {
+      const scrollPosition = imageList.scrollLeft;
+      const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+      scrollbarThumb.style.left = `${thumbPosition}px`;
+  }
+
+  // Call these two functions when image list scrolls
+  imageList.addEventListener("scroll", () => {
+      updateScrollThumbPosition();
+      handleSlideButtons();
+  });
+}
+
+window.addEventListener("resize", initSlider);
+window.addEventListener("load", initSlider);
+          </script>
+        </div>
+      </div>
+   </section>
+       
+      
+    
+        
+    <section class="section">
+        <h2>New Arrivals</h2>
+        <div class="products">
+            <div class="product">
+                <img src="black official shoes image 7.jpg" alt="images project/apple laptop model 1.jpg" width="200" height="200">
+                <h3>official black shoes</h3>
+                <p>ksh 3500</p>
+            </div>
+            <div class="product">
+                <img src="brown official image 16.jpg" alt="images project/apple laptop model 2.jpg" width="200" height="100">
+                <h3>brown official</h3>
+                <p>ksh 4000</p>
+            </div>
+            <div class="product">
+                <img src="dark brown official shoes image 8.jpg" alt="images project/apple laptop model 3.jpg" width="200" height="300">
+                <h3>dark brown</h3>
+                <p>ksh 4200</p>
+            </div>
+            <div class="product">
+                <img src="grey vans image 11.jpg" alt="images project/godfathercap and sun glasses.jpg">
+                <h3>grey vans</h3>
+                <p>ksh 2000</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Best Seller</h2>
+        <img src="varieties unisex sports image 9.jpg" alt="images project/pexels-rachel-claire-4577191.jpg" width="400px" height="400px">
+    </section>
+    
+    <section class="section">
+        <h2>Recommendations For You</h2>
+        <div class="products">
+            <div class="product">
+                <img src="slippers grey image 13.jpg" alt="images project/sleepwear.jpg"  width="400" height="800">
+                <h3>Slippers Grey</h3>
+                <p>ksh 400</p>
+            </div>
+            <div class="product">
+                <img src="nike zoom sporta image 4.jpg" alt="images project/converse green.jpg"  width="400" height="800">
+                <h3>Nike Zoom</h3>
+                <p>ksh 2000</p>
+            </div>
+            <div class="product">
+                <img src="blue flat nikes image 12.jpg" alt="images project/Home toothbrush ruck.jpg" width="400" height="800">
+                <h3>Blue flat nikes </h3>
+                <p>ksh 1000</p>
+            </div>
+            <div class="product">
+                <img src="open shoes ladies image 3.jpg" alt="images project/Egg homeRuck.jpg" width="400" height="800">
+                <h3>Open shoes ladies</h3>
+                <p>ksh1099</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section4">
+        <style>
+            .section4{
+                overflow: hidden;
+                z-index: 1;
+                background-color: rgb(21, 60, 61);
+                text-align: center;
+                text-wrap: wrap;
+                color: #fff;
+                margin-left: 0;
+                box-shadow: 0.4px 1px 0.4px white;
+            }
+            .section4 button{
+                cursor: pointer;
+                height: 40px; 
+                width: 120px;
+                border-radius: 12px;
+                background-color: transparent;
+                color: white;
+                margin-bottom: 10px;
+            }
+            .section4 button:hover{
+                z-index: 1;
+                outline: 2px solid white;
+                
+            }
+            
+        </style>
+        <h2>Our Story</h2>
+        <div>
+            <p>At KLOSET SHOPIFY, our story begins with a passion for bringing diversity and choice to the forefront of shopping experiences. Founded by a team of enthusiasts driven by the belief that every individual deserves access to a wide range of products that reflect their unique tastes and preferences, KLOSET SHOPIFY strives to redefine the traditional concept of shopping.
+
+                From fashion-forward clothing to cutting-edge gadgets, from timeless classics to trendsetting innovations, our curated selection embodies the spirit of variety and inclusivity. We believe that every product tells a story and has the power to inspire, delight, and enrich the lives of our customers.</p>
+            <p>Since our inception, we have been dedicated to fostering a community where diversity thrives, and individuality is celebrated. With an unwavering commitment to quality, authenticity, and customer satisfaction, we aim to create a shopping destination where everyone can find something that resonates with them.
+
+                Join us on our journey as we continue to expand our offerings, champion new voices, and empower individuals to express themselves freely through the products they choose. </p>
+            <button>Read More</button>
+        </div>
+        
+    </section>
+    
+   
+    
+
+
+    <footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul><li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">our Team</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2024; Designed by <span class="designer">Frank Nyapera</span></p>
+    </div>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+footer{
+    background-color: gray;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
+    </style>
+</footer>
